@@ -2,6 +2,7 @@
   "name": "awsservertest",
   "version": "1.0.0",
   "main": "test.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +19,12 @@
   "homepage": "https://github.com/fayzillo95/awsservertest#readme",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "joi": "^17.13.3",
     "pg": "^8.16.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.7"
+    "sequelize": "^6.37.7",
+    "winston": "^3.17.0"
   }
 }
