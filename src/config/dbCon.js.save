@@ -1,0 +1,9 @@
+import {Sequelize} from "sequlize";
+import {DataTypes} from "sequelize";
+
+
+const dbCon = new Sequlize({
+	username : "fayzullo",
+	port : 5432,
+	database : "postgres",
+	
