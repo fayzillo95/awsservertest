@@ -22,26 +22,22 @@ export default dbCon.define("User", {
         },
         allowNull : false
     },
+    password : {
+        type : DataTypes.STRING,
+    },
     gender : {
         type : DataTypes.STRING,
-        validate : {
-            isIn : ["male", "female"]
-        },
         allowNull : true
     },
     role : {
         type : DataTypes.STRING(10),
-        validate : {
-            isIn : ["superadmin", "user", "admin" , "moderator"]
-        },
         defaultValue : "user",
-        allowNull : true
     },
     birthday : {
         type : DataTypes.STRING(11),
-        validate : {
-            is: /^\d{4}-\d{2}-\d{2}$/ // YYYY-MM-DD format
-        },
-        allowNull : false
+        allowNull : true, defaultValue : "2001-01-01"
     }
+},{
+    tableName : "users",
+    underscored : true
 })
