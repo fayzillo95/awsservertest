@@ -47,9 +47,9 @@ Bu loyiha foydalanuvchilarni ro'yxatdan o'tkazish, login qilish, ma'lumotlarni y
 
 | Field    | Type   | Required | Description                              |
 |----------|--------|----------|-----------------------------------------|
-| username | string | yo'q     | Minimal 3, maksimal 49 ta belgi          |
-| email    | string | yo'q     | Email formatida, minimal uzunlik 11 ta   |
-| password | string | yo'q     | Minimal 8, maksimal 32 ta belgi          |
+| username | string | ha     | Minimal 3, maksimal 49 ta belgi          |
+| email    | string | ha     | Email formatida, minimal uzunlik 11 ta   |
+| password | string | ha     | Minimal 8, maksimal 32 ta belgi          |
 | gender   | string | yo'q     | `male` yoki `female`                      |
 | birthday | string | yo'q     | Sana formati `YYYY-MM-DD` bo'lishi kerak |
 
