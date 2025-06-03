@@ -34,7 +34,6 @@ export default class UserController {
     static async updateUser(req, res, next) {
         try {
             const {body} = req
-            console.log(body)
             req.user = await UserService.updateUser(body,req.user.id)
             req.message = "User updated !"
             next()

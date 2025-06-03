@@ -27,10 +27,14 @@ export const loginValidation = async (req, res, next) => {
         if(!req.body || Object.values(req.body).length === 0){
             throw new InvalidBody("req.body? ")
         }
+        if(!req.body.username){
+            throw new InvalidBody("username ")
+        }
+        if(!req.body.password){
+            throw new InvalidBody(" password ")
+        }
         const user = await checkExists({username : req.body?.username},userModel,"User")
-        // if(!user){
-        //     throw new CustomError(`User already not exists ${req.body.username} !`, 400)
-        // }
+
         const {error}  = UserValidation.loginV(req.body)
         if(error){
             throw new CustomError(error.details.map(d => d.message).join(" | "), 400)
