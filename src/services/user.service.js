@@ -42,7 +42,7 @@ export default class UserService {
         return [updatedUser,oldUser];
     }
     static async deleteItem(id){
-        const user = await checkExists({id : id})
+        const user = await checkExists({id : id}, userModel, "User")
         const result = await userModel.destroy({wherre : {id : parseInt(id)}})
         if(result === 0 ){
             throw new Error("Something went wrong. Please try again later.", 404)
