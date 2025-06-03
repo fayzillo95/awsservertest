@@ -45,7 +45,7 @@ export default class UserService {
         const user = await checkExists({id : id}, userModel, "User")
         const result = await userModel.destroy({where : {id : parseInt(id)}})
         if(result === 0 ){
-            throw new Error("Something went wrong. Please try again later.", 404)
+            throw new CustomError("Something went wrong. Please try again later.", 404)
         }
         return user
     }
