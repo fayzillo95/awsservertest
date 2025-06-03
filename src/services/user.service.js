@@ -8,6 +8,10 @@ import { hash } from "../utils/helper/jwt.js";
 export default class UserService {
     constructor() { }
 
+    static async getAll(){
+        return userModel.findAll()
+    }
+
     static async createItem(body) {
         console.log(hash)
         body.password = await bcrypt.hash(body.password, parseInt(hash))

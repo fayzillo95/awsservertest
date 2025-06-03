@@ -3,6 +3,16 @@ import UserService from "../services/user.service.js";
 export default class UserController {
     constructor() {}
 
+    static async getAll(req, res,next) {
+        try {
+            req.user = await UserService.getAll()
+            req.message  = "Users read complieted !"
+            next()
+        } catch (error) {
+            next(error)
+        }
+    }
+
     static async register(req, res, next) {
         try {
             req.user = await UserService.createItem(req.body)
