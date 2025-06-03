@@ -10,6 +10,7 @@ const user_router = Router()
 user_router.post("/api/users/v1/register",registerValidate, UserController.register, jwtMiddleware)
 user_router.post("/api/users/v2/login", loginValidation, UserController.login, jwtMiddleware)
 user_router.put("/api/users/v3/update", checkToken, updateValidaion,UserController.updateUser, userResponseHandler)
+user_router.delete("/api/users/v4/delete", checkToken, UserController.deleteUser, userResponseHandler)
 user_router.get("/api/users/v5/getall", UserController.getAll, userResponseHandler)
 
 

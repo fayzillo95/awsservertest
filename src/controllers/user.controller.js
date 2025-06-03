@@ -45,8 +45,7 @@ export default class UserController {
     static async deleteUser(req, res, next) {
         try {
             const {body} = req
-            console.log(req.user)
-            req.user = await UserService.deleteItem(req.user.id)
+            req.user = await UserService.deleteItem(parseInt(req.user.id))
             req.message = "User deleted !"
             next()
         } catch (error) {
