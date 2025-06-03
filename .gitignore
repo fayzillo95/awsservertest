@@ -1,4 +1,4 @@
 /node_modules
 /.env
 src/utils/logs/serverlogs/errors.log
-src/util/logs/userlogs/errors.log
+src/utils/logs/userlogs/errors.log
