@@ -2,7 +2,7 @@ name: Deploy Docker to DockerHub
 # test
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-and-push:
