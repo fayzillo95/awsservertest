@@ -26,3 +26,21 @@ jobs:
           tags: fayzillodeveloper/codespaces-test:git-action-test
           cache-from: type=registry,ref=fayzillodeveloper/codespaces-test
           cache-to: type=registry,ref=fayzillodeveloper/codespaces-test
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver: docker-container
+          buildkitd-flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host
+          additional-buildx-args: --build-arg MY_ARG=value
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: fayzillodeveloper/codespaces-test:latest
+          cache-from: type=registry,ref=fayzillodeveloper/codespaces-test
+          cache-to: type=registry,ref=fayzillodeveloper/codespaces-test
+          build-args: |
+            MY_ARG=value
+          labels: |
+            org.opencontainers.image.created=${{ github.event.head_commit.timestamp }}    
