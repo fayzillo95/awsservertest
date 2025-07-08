@@ -23,4 +23,20 @@ jobs:
         with:
           context: .
           push: true
-          tags: fayzillodeveloper/codespaces-test:git-actions
+          tags: fayzillodeveloper/codespaces-test:git-action-test
+          cache-from: type=registry,ref=fayzillodeveloper/codespaces-test
+          cache-to: type=registry,ref=fayzillodeveloper/codespaces-test
+          build-args: |
+            DOCKER_BUILDKIT=1
+            BUILDKIT_INLINE_CACHE=1
+            BUILDKIT_PROGRESS=plain
+            BUILDKIT_NO_CACHE=1
+            BUILDKIT_CACHE_IMPORT=1
+            BUILDKIT_CACHE_EXPORT=1
+            BUILDKIT_CACHE_REPO=fayzillodeveloper/codespaces-test
+          labels: |
+            org.opencontainers.image.source=https://github.com/fayzillo95/awssevrertest
+            org.opencontainers.image.url=https://github.com/fayzillo95/awssevrertest
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.title=Codespaces Test
+            org.opencontainers.image.description=This is a test image for Codespaces
